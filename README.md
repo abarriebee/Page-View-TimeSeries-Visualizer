@@ -1,7 +1,17 @@
 # Page View Time Series Visualizer
 
-The objective of this project is to visualize a time series of data using a line chart, bar chart, and box plots. We will do this by using Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations will aid in understanding the patterns of visits while identifying yearly and monthly growth.
+The objective of this project is to visualize a time series of data using a <mark style='background-color:blue'>line chart</mark>, bar chart, and box plots. We will do this by using Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations will aid in understanding the patterns of visits while identifying yearly and monthly growth.
 
+# Table of Content
+* [Introduction](#Intro)
+* [Conditions](#Cond)
+* [Impoting CSV](#CSV)
+* [Cleaning Data](#Clean)
+* [Line Chart](#line)
+* [Bar Chart](#bar)
+* [Box Plot](#box)
+
+## Introduction <a name="Intro"></a>
 We will be using the data to complete the following tasks:
 
 1. Using Pandas to import the data from "fcc-forum-pageviews.csv" and setting the index to the "date" column.
@@ -13,4 +23,30 @@ We will be using the data to complete the following tasks:
 For each chart, we will be using a copy of the data frame. Unit tests are written under [test_module.py](test_module.py).
 
 The boilerplate also includes commands to save and return the image.
+
+## Conditions <a name="Cond"></a>
+
+We start off by having set factors ready for us to work off of.
+## Importing CSV <a name="CSV"></a>
+## Cleaning Data <a name= "Clean"></a>
+## Line Chart <a name="line"></a>
+<details>
+  <summary>
+      Line Plot Solution
+      
+ </summary>
+  
+      fig, ax = plt.subplot(figsize(10, 5))
+      ax.plot(df.index, df['value'], 'r', linewidth=1)
+      ax.set_title('Daily freeCodeCamp Forum Page Views 5/2016 - 12/2019')
+      ax.set_xlabel('Date')
+      ax.set_ylabel('Page views')
+      
+</details>
+
+## Bar Chart <a name="bar"></a>
+## Box Plot <a name="box"></a>
+
+
+
 
