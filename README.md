@@ -26,11 +26,11 @@ The boilerplate also includes commands to save and return the image.
 
 ## Conditions <a name="Cond"></a>
 
-We start off by having set factors ready for us to work off of.
+We start off by having set factors ready for us to work off of. Here we have an excel spreadsheet of [page views](forum-page-views.csv) from the freeCodeCamp forum page.
 
 ## Importing CSV <a name="CSV"></a>
 Import data while making sure to parse dates. We can consider setting index column to 'date'.
-We may search for the appropriete usage of pandas for importing CSV files by the following [documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html).
+We may search for the appropriete usage of pandas for importing CSV files by the following [documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html). We can then see how <kbd>index_col</kbd> and <kbd>parse_dates</kbd> are the most appropeite to use for meeting our condtions.
 ```
 df = pd.read_csv("fcc-forum-pageviews.csv",parse_dates = ["date"], index_col = "date")
 ```
@@ -59,6 +59,8 @@ df = df[
 </details>
 
 ## Bar Chart <a name="bar"></a>
+Pandas [documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html) for plotting bar chart.
+plot.bar and determining the type of string under the 
 ## Box Plot <a name="box"></a>
 
 
