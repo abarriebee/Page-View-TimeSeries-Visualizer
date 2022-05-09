@@ -12,7 +12,7 @@ The objective of this project is to visualize a time series of data using a <mar
 * [Box Plot](#box)
 
 ## Introduction <a name="Intro"></a>
-We will be using the data to complete the following tasks:
+We will be using the data given to us to complete the following tasks:
 
 1. Using Pandas to import the data from "fcc-forum-pageviews.csv" and setting the index to the "date" column.
 2. Cleaning the data by filtering out days when the page views were in the top 2.5% of the dataset or bottom 2.5% of the dataset.
