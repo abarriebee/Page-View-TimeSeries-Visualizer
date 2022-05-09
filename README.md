@@ -27,8 +27,18 @@ The boilerplate also includes commands to save and return the image.
 ## Conditions <a name="Cond"></a>
 
 We start off by having set factors ready for us to work off of.
+
 ## Importing CSV <a name="CSV"></a>
+Import data (Make sure to parse dates. Consider setting index column to 'date'.)
+```
+df = pd.read_csv("fcc-forum-pageviews.csv",parse_dates = ["date"], index_col = "date")
+```
 ## Cleaning Data <a name= "Clean"></a>
+```
+df = df[
+  (df["value"] >= df["value"].quantile(0.025)) &
+  (df["value"] <= df["value"].quantile(0.975))]
+```
 ## Line Chart <a name="line"></a>
 <details>
   <summary>
@@ -36,11 +46,15 @@ We start off by having set factors ready for us to work off of.
       
  </summary>
   
-      fig, ax = plt.subplot(figsize(10, 5))
-      ax.plot(df.index, df['value'], 'r', linewidth=1)
-      ax.set_title('Daily freeCodeCamp Forum Page Views 5/2016 - 12/2019')
-      ax.set_xlabel('Date')
-      ax.set_ylabel('Page views')
+  def draw_line_plot():
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(df.index, df['value'], 'r', linewidth=1)
+    ax.set_title('Daily freeCodeCamp Forum Page Views 5/2016 - 12/2019')
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Page views')
+  
+    fig.savefig('line_plot.png')
+    return fig
       
 </details>
 
