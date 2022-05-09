@@ -30,6 +30,7 @@ We start off by having set factors ready for us to work off of.
 
 ## Importing CSV <a name="CSV"></a>
 Import data (Make sure to parse dates. Consider setting index column to 'date'.)
+We may search for the appropriete usage of pandas for importing CSV files by the following [documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html).
 ```
 df = pd.read_csv("fcc-forum-pageviews.csv",parse_dates = ["date"], index_col = "date")
 ```
