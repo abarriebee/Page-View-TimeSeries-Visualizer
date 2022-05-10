@@ -51,7 +51,13 @@ df = df[
 
 Returned output of the spreadsheet: 
 
-![image](Solutions/01FliteredReturn.png)
+| Date| Value | Month |
+|---|---|---|
+| 2019-05-19 | 19736 | 5 |
+| 2019-05-26 | 18060 | 5 |
+| 2019-05-27 | 19997 | 5 |
+| 2019-05-28 | 19044 | 5 |
+| 2019-05-29 | 20325 | 5 |
 
 ## Line Chart <a name="line"></a>
 
@@ -99,13 +105,13 @@ Returns:
 
 ## Bar Chart <a name="bar"></a>
 
-Preparing data for bar graph by sorting month and year values:
+Preparing data while sorting values by month and year:
 ```
 def draw_bar_plot():
     df["month"] = df.index.month
     df["year"] = df.index.year
 ```
-Average daily page viewa for each month grouped by the year:
+Average daily page views for each month grouped by the year:
 ```
     df_bar = df.groupby(["year", "month"])["value"].mean()
     df_bar = df_bar.unstack()
@@ -122,6 +128,20 @@ For saving graph and returning figure:
     fig.savefig('bar_plot.png')
     return fig
 ```
+
+| Date| Value | Month |
+|---|---|---|
+| 2019-05-19 | 19736 | 5 |
+| 2019-05-26 | 18060 | 5 |
+| 2019-05-27 | 19997 | 5 |
+| 2019-05-28 | 19044 | 5 |
+| 2019-05-29 | 20325 | 5 |
+|...|...|...|
+| 2019-11-24 | 138875 | 11 |
+| 2019-11-29 | 171584 | 11 |
+| 2019-11-30 | 141161 | 11 |
+| 2019-12-01 | 142918 | 12 |
+| 2019-12-03 | 158549 | 12 |
 
 Pandas [documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html) for plotting bar chart.
 plot.bar and determining the type of string under the 
