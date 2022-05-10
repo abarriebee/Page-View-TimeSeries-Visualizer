@@ -51,6 +51,28 @@ Returned output of the spreadsheet:
 ![image](Solutions/01FliteredReturn.png)
 
 ## Line Chart <a name="line"></a>
+
+Plotting the line graph and size:
+
+```
+def draw_line_plot():
+      fig, ax = plt.subplots(figsize=(10, 5))
+      ax.plot(df.index, df['value'], 'r', linewidth=1)
+```
+Setting the labels of the graph:
+      
+```
+      ax.set_title('Daily freeCodeCamp Forum Page Views 5/2016 - 12/2019')
+      ax.set_xlabel('Date')
+      ax.set_ylabel('Page views')
+```
+Setting the input to save and return the graph:
+      
+```
+      fig.savefig('line_plot.png')
+      return fig
+```
+
 <details>
   <summary>
       Line Plot Solution
