@@ -55,7 +55,7 @@ Returned output of the spreadsheet:
 
 ## Line Chart <a name="line"></a>
 
-Plotting the line graph and size:
+Dreating line graph and size:
 
 ```
 def draw_line_plot():
@@ -99,11 +99,14 @@ Returns:
 
 ## Bar Chart <a name="bar"></a>
 
-Preparing data for bar graph by sorting months and year values:
+Preparing data for bar graph by sorting month and year values:
 ```
 def draw_bar_plot():
     df["month"] = df.index.month
     df["year"] = df.index.year
+```
+Average daily page viewa for each month grouped by the year:
+```
     df_bar = df.groupby(["year", "month"])["value"].mean()
     df_bar = df_bar.unstack()
 ```
