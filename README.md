@@ -49,15 +49,6 @@ df = df[
   (df["value"] <= df["value"].quantile(0.975))]
 ```
 
-Returned output of the spreadsheet: 
-
-| Date| Value | Month |
-|---|---|---|
-| 2019-05-19 | 19736 | 5 |
-| 2019-05-26 | 18060 | 5 |
-| 2019-05-27 | 19997 | 5 |
-| 2019-05-28 | 19044 | 5 |
-| 2019-05-29 | 20325 | 5 |
 
 ## Line Chart <a name="line"></a>
 
@@ -128,7 +119,7 @@ For saving graph and returning figure:
     fig.savefig('bar_plot.png')
     return fig
 ```
-
+<!---
 | Date| Value | Month |
 |---|---|---|
 | 2019-05-19 | 19736 | 5 |
@@ -142,6 +133,7 @@ For saving graph and returning figure:
 | 2019-11-30 | 141161 | 11 |
 | 2019-12-01 | 142918 | 12 |
 | 2019-12-03 | 158549 | 12 |
+--->
 
 Pandas [documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html) for plotting bar chart.
 plot.bar and determining the type of string under the 
