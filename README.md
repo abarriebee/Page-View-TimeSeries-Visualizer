@@ -35,6 +35,7 @@ We are also provided with graph examples of how our outcomes should appear for o
 ## Importing CSV <a name="CSV"></a>
 Import data while making sure to parse dates. We can consider setting index column to 'date'.
 We may search for the appropriete usage of pandas for importing CSV files by the following [documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html). We can then see how <kbd>index_col</kbd> and <kbd>parse_dates</kbd> are the most appropeite to use for meeting our condtions.
+
 ```
 df = pd.read_csv("fcc-forum-pageviews.csv",parse_dates = ["date"], index_col = "date")
 ```
@@ -106,7 +107,7 @@ def draw_bar_plot():
     df_bar = df.groupby(["year", "month"])["value"].mean()
     df_bar = df_bar.unstack()
 ```
-Setting up bar graph to be plot
+Setting up bar graph to be plot:
 ```
     fig = df_bar.plot.bar(legend=True, figsize = (13, 6), ylabel="Average Page Views", xlabel="Years").figure
     plt.legend(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
@@ -129,6 +130,8 @@ Output return:
 
 ## Box Plot <a name="box"></a>
 
+
+
 ```
 def draw_box_plot():
     df_box = df.copy()
@@ -136,17 +139,19 @@ def draw_box_plot():
     df_box['year'] = [d.year for d in df_box.date]
     df_box['month'] = [d.strftime('%b') for d in df_box.date]
 ```
-
+Sorting months starting at Janurary:
 ```
     df_box["month_num"] = df_box["date"].dt.month
     df_box = df_box.sort_values("month_num")
 ```
-
+Drawing of box plots for the yearly and monthly values:
 ```
     fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10,5))
     axes[0] = sns.boxplot(x=df_box["year"], y=df_box["value"], ax = axes[0])
     axes[1] = sns.boxplot(x=df_box["month"], y=df_box["value"], ax = axes[1])
-
+```
+Labels for the yearly and monthly plots:
+```
     axes[0].set_title("Year-wise Box Plot (Trend)")
     axes[0].set_xlabel("Year")
     axes[0].set_ylabel("Page Views")
@@ -154,8 +159,6 @@ def draw_box_plot():
     axes[1].set_title("Month-wise Box Plot (Seasonality)")
     axes[1].set_xlabel("Year")
     axes[1].set_ylabel("Page Views")
-  
-
 ```
 Output return:
 
