@@ -98,8 +98,6 @@ Returns:
 
 ## Bar Chart <a name="bar"></a>
 
-Setting up bar graph:
-
 Preparing data for bar graph by sorting months and year values:
 ```
 def draw_bar_plot():
