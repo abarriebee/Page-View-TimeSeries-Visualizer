@@ -96,15 +96,67 @@ Returns:
 
 ## Bar Chart <a name="bar"></a>
 
+Setting up bar graph:
+
+Preparing data for bar graph by sorting months and year values:
+```
+def draw_bar_plot():
+    df["month"] = df.index.month
+    df["year"] = df.index.year
+    df_bar = df.groupby(["year", "month"])["value"].mean()
+    df_bar = df_bar.unstack()
+```
+Setting up bar graph to be plot
+```
+    fig = df_bar.plot.bar(legend=True, figsize = (13, 6), ylabel="Average Page Views", xlabel="Years").figure
+    plt.legend(['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'])
+    plt.xticks(fontsize = 10)
+    plt.yticks(fontsize = 10)
+```
+For saving graph and returning figure:
+```
+    fig.savefig('bar_plot.png')
+    return fig
+```
+
 Pandas [documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html) for plotting bar chart.
 plot.bar and determining the type of string under the 
 
 Output return:
 
+
 ![image](Solutions/bar_plot.png)
 
 ## Box Plot <a name="box"></a>
 
+```
+def draw_box_plot():
+    df_box = df.copy()
+    df_box.reset_index(inplace = True)
+    df_box['year'] = [d.year for d in df_box.date]
+    df_box['month'] = [d.strftime('%b') for d in df_box.date]
+```
+
+```
+    df_box["month_num"] = df_box["date"].dt.month
+    df_box = df_box.sort_values("month_num")
+```
+
+```
+    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10,5))
+    axes[0] = sns.boxplot(x=df_box["year"], y=df_box["value"], ax = axes[0])
+    axes[1] = sns.boxplot(x=df_box["month"], y=df_box["value"], ax = axes[1])
+
+    axes[0].set_title("Year-wise Box Plot (Trend)")
+    axes[0].set_xlabel("Year")
+    axes[0].set_ylabel("Page Views")
+
+    axes[1].set_title("Month-wise Box Plot (Seasonality)")
+    axes[1].set_xlabel("Year")
+    axes[1].set_ylabel("Page Views")
+  
+
+```
 Output return:
 
 ![image](Solutions/box_plot.png)
