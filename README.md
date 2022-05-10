@@ -28,7 +28,9 @@ For each chart, we will be using a copy of the data frame. Unit tests are writte
 
 The boilerplate also includes commands to save and return the image.
 
-We start off by having set factors ready for us to work off of. Here we have an excel spreadsheet of [page views](forum-page-views.csv) from the freeCodeCamp forum page.
+We start off by having set factors ready for us to work off of. Here we have an data from an excel spreadsheet of [page views](forum-page-views.csv) from the freeCodeCamp forum page.
+
+We are also provided with graph examples of how our outcomes should appear for our [line chart](examples/Figure_1.png), [bar chart](examples/Figure_2.png), and [box chart](examples/Figure_3.png).
 
 ## Importing CSV <a name="CSV"></a>
 Import data while making sure to parse dates. We can consider setting index column to 'date'.
