@@ -130,7 +130,7 @@ Output return:
 
 ## Box Plot <a name="box"></a>
 
-
+Perparing data for box plots:
 
 ```
 def draw_box_plot():
