@@ -20,11 +20,13 @@ We will be using the data given to us to complete the following tasks:
 4. Creating a <kbd>draw_bar_plot</kbd> function that draws a bar chart similar to "examples/Figure_2.png". It will show an average daily page views for each month grouped by year. The legend will show month labels and have a title of "Months". On the chart, the label on the x axis will be "Years" and the label on the y-axis will be "Average Page Views".
 5. Creating a <kbd>draw_box_plot</kbd> function that uses Seaborn to draw two adjacent box plots similar to "examples/Figure_3.png". These box plots will show how the values are distributed within a given year or month and how it compares over time. The title of the first chart should be "Year-wise Box Plot (Trend)" and the title of the second chart should be "Month-wise Box Plot (Seasonality)". Making sure the month labels on bottom start at "Jan" and the x and x-axis are labeled correctly. The boilerplate includes commands to prepare the data.
 
+
+## Conditions <a name="Cond"></a>
+
+
 For each chart, we will be using a copy of the data frame. Unit tests are written under [test_module.py](test_module.py).
 
 The boilerplate also includes commands to save and return the image.
-
-## Conditions <a name="Cond"></a>
 
 We start off by having set factors ready for us to work off of. Here we have an excel spreadsheet of [page views](forum-page-views.csv) from the freeCodeCamp forum page.
 
@@ -35,11 +37,19 @@ We may search for the appropriete usage of pandas for importing CSV files by the
 df = pd.read_csv("fcc-forum-pageviews.csv",parse_dates = ["date"], index_col = "date")
 ```
 ## Cleaning Data <a name= "Clean"></a>
+
+Setting conditions to find the top 2.5% and bottom 2.5% (97.5%) of the datasets.
+
 ```
 df = df[
   (df["value"] >= df["value"].quantile(0.025)) &
   (df["value"] <= df["value"].quantile(0.975))]
 ```
+
+Returned output of the spreadsheet: 
+
+![image](Solutions/01FliteredReturn.png)
+
 ## Line Chart <a name="line"></a>
 <details>
   <summary>
@@ -55,13 +65,27 @@ df = df[
       ax.set_ylabel('Page views')
       fig.savefig('line_plot.png')
       return fig
-      
+        
 </details>
 
+Returns:
+
+![image](Solutions/line_plot.png)
+
 ## Bar Chart <a name="bar"></a>
+
 Pandas [documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html) for plotting bar chart.
 plot.bar and determining the type of string under the 
+
+Output return:
+
+![image](Solutions/bar_plot.png)
+
 ## Box Plot <a name="box"></a>
+
+Output return:
+
+![image](Solutions/box_plot.png)
 
 
 
