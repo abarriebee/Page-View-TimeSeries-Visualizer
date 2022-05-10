@@ -96,6 +96,10 @@ Output returns:
 
 ## Bar Chart <a name="bar"></a>
 
+Here is a pandas [documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html) to help in plotting bar chart.
+
+plot.bar and determining the type of string under the 
+
 Preparing data while sorting values by month and year:
 ```
 def draw_bar_plot():
@@ -134,9 +138,6 @@ For saving graph and returning figure:
 | 2019-12-01 | 142918 | 12 |
 | 2019-12-03 | 158549 | 12 |
 --->
-
-Pandas [documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html) for plotting bar chart.
-plot.bar and determining the type of string under the 
 
 Output return:
 
