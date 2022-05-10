@@ -90,7 +90,7 @@ Setting the input to save and return the graph:
         
 </details>
 
-Returns:
+Output returns:
 
 ![image](Solutions/line_plot.png)
 
