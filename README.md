@@ -1,6 +1,6 @@
 # Page View Time Series Visualizer
 
-The objective of this project is to visualize a time series of data using a <mark style='background-color:blue'>line chart</mark>, bar chart, and box plots. We will do this by using Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations aid in understanding the patterns of visits while identifying yearly and monthly growth.
+The objective of this project is to provide a walkthrough of visualize a time series of data using a <mark style='background-color:blue'>line chart</mark>, bar chart, and box plots. We will do this by using Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations aid in understanding the patterns of visits while identifying yearly and monthly growth.
 
 # Table of Content
 * [Introduction](#Intro)
