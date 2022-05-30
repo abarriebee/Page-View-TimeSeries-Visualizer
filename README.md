@@ -1,15 +1,17 @@
 # Page View Time Series Visualizer
 
-The objective of this project is to visualize a time series of data using a <mark style='background-color:blue'>line chart</mark>, bar chart, and box plots. We will do this by using Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations will aid in understanding the patterns of visits while identifying yearly and monthly growth.
+The objective of this project is to visualize a time series of data using a <mark style='background-color:blue'>line chart</mark>, bar chart, and box plots. We will do this by using Pandas, Matplotlib, and Seaborn to visualize a dataset containing the number of page views each day on the freeCodeCamp.org forum from 2016-05-09 to 2019-12-03. The data visualizations aid in understanding the patterns of visits while identifying yearly and monthly growth.
 
 # Table of Content
 * [Introduction](#Intro)
 * [Conditions](#Cond)
 * [Impoting CSV](#CSV)
 * [Cleaning Data](#Clean)
-* [Line Chart](#line)
-* [Bar Chart](#bar)
-* [Box Plot](#box)
+* [Visualuzation](#visual)
+  * [Line Chart](#line)
+  * [Bar Chart](#bar)
+  * [Box Plot](#box)
+* [Conclusion](#conclusion)
 
 ## Introduction <a name="Intro"></a>
 We will be using the data given to us to complete the following tasks:
@@ -48,9 +50,9 @@ df = df[
   (df["value"] >= df["value"].quantile(0.025)) &
   (df["value"] <= df["value"].quantile(0.975))]
 ```
+## Visualization <a name="visual"></a>
 
-
-## Line Chart <a name="line"></a>
+### Line Chart <a name="line"></a>
 
 Creating line graph and size:
 
@@ -94,7 +96,7 @@ Output returns:
 
 ![image](Solutions/line_plot.png)
 
-## Bar Chart <a name="bar"></a>
+### Bar Chart <a name="bar"></a>
 
 Here is a pandas [documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.bar.html) to help in plotting bar chart.
 
@@ -144,7 +146,7 @@ Output return:
 
 ![image](Solutions/bar_plot.png)
 
-## Box Plot <a name="box"></a>
+### Box Plot <a name="box"></a>
 
 Perparing data for box plots:
 
@@ -180,6 +182,6 @@ Output return:
 
 ![image](Solutions/box_plot.png)
 
+## Conclusion <a name="conclusion"></a>
 
-
-
+From the trends of our graphs, it can be observed that the FreeCodeCamp site has gained popularity and growth as time progresses. More specifically, we can see that when we observe the months within the year, there is also an increase in activity towards the middle-to-end of the year.
